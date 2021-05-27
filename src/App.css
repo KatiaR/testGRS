@@ -3,6 +3,6 @@
 	font-size: 1.3rem;
 }
 
-.ant-layout {
-	background: none;
+.App .ant-layout {
+	background: #fff;
 }

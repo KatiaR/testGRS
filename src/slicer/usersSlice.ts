@@ -1,11 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { getUsers, User } from '../api/users';
+import { getUsers } from '../api/users';
 import { RootState } from '../app/store';
-
-export interface IUserState {
-	data?: User[];
-	status: 'idle' | 'loading' | 'success' | 'failed';
-}
+import { IUserState } from '../interfaces/interfaces';
 
 const initialState: IUserState = {
 	data: undefined,

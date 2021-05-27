@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
 import { Collapse } from 'antd';
-import { RightOutlined, DownOutlined } from '@ant-design/icons';
+import { RightOutlined } from '@ant-design/icons';
 import { CardContent } from './Card';
 import { useAppSelector, useAppDispatch } from '../app/hooks';
-import { clearData } from '../slicer/reposSlice';
 import { NoContent } from './NoContent';
 import { selectData as users } from '../slicer/usersSlice';
 import { selectReposData } from '../slicer/reposSlice';
@@ -16,28 +14,18 @@ export function ContentBox() {
 	const dataRepos = useAppSelector(selectReposData);
 	const dispatch = useAppDispatch();
 
-	useEffect(() => {
-		return () => {
-			clearData();
-		};
-	}, []);
-
 	function getRepoDescription(keys: string | string[]) {
-		if (!Array.isArray(keys)) return;
-
-		const repoOwners = dataRepos?.map((elem) => {
-			return elem.user;
-		});
-		const lastSelecteUser = keys[keys.length - 1];
-		const iDataRepoHasKey = repoOwners.includes(lastSelecteUser);
-		if (!iDataRepoHasKey && lastSelecteUser) {
-			dispatch(getReposAsync(lastSelecteUser));
+		const repoOwners = dataRepos?.map((elem) => elem.user);
+		const lastSelectedUser = keys[keys.length - 1];
+		const iDataRepoHasKey = repoOwners.includes(lastSelectedUser);
+		if (!iDataRepoHasKey && lastSelectedUser) {
+			dispatch(getReposAsync(lastSelectedUser));
 		}
 	}
 
 	const panel =
 		usersSelector?.length !== 0 ? (
-			usersSelector?.map(({ id, login }) => {
+			usersSelector?.map(({ login }) => {
 				return (
 					<Panel
 						header={login}

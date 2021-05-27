@@ -1,20 +1,25 @@
 import React, { useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
-import { useAppSelector, useAppDispatch } from '../app/hooks';
+import { useAppDispatch } from '../app/hooks';
 import { clearData, getUsersAsync } from '../slicer/usersSlice';
+import { clearReposData } from '../slicer/reposSlice';
 
 export function SearchForm() {
 	const dispatch = useAppDispatch();
 	const onFinish = ({ searchInput }: { searchInput: string }) => {
+		dispatch(clearData());
+		dispatch(clearReposData());
 		dispatch(getUsersAsync(searchInput));
 	};
 
-	const onFinishFailed = (errorInfo: any) => {
+	const onFinishFailed = (errorInfo: object) => {
 		console.log('Failed:', errorInfo);
 	};
+
 	useEffect(() => {
 		return () => {
-			clearData();
+			dispatch(clearData());
+			dispatch(clearReposData());
 		};
 	}, []);
 

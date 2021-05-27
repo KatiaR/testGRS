@@ -1,17 +1,10 @@
-import axios, { AxiosResponse } from 'axios';
-
-export interface Repo {
-	id: string;
-	description?: string;
-	login: string;
-	name: string;
-	stargazers_count?: number;
-}
+import axios from 'axios';
+import { IRepo } from '../interfaces/interfaces';
 
 export const getRepositories = async (user: string) => {
 	const resultLimit = 5;
 	try {
-		const response = await axios.get<Repo[]>(
+		const response = await axios.get<IRepo[]>(
 			`https://api.github.com/users/${user}/repos?per_page=${resultLimit}`
 		);
 		return { user, repos: response.data };

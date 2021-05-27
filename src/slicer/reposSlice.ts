@@ -1,12 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { isConditionalExpression } from 'typescript';
-import { getRepositories, Repo } from '../api/repository';
+import { getRepositories } from '../api/repository';
 import { RootState } from '../app/store';
-
-export interface IRepoState {
-	data: Array<{ user: string; repos: Repo[] }>;
-	status: 'idle' | 'loading' | 'success' | 'failed';
-}
+import { IRepoState } from '../interfaces/interfaces';
 
 const initialState: IRepoState = {
 	data: [],
@@ -25,7 +20,7 @@ export const reposSlice = createSlice({
 	name: 'repo',
 	initialState,
 	reducers: {
-		clearData: (state) => {
+		clearReposData: (state) => {
 			state.status = 'idle';
 			state.data = [];
 		},
@@ -34,7 +29,7 @@ export const reposSlice = createSlice({
 		builder
 			.addCase(getReposAsync.pending, (state) => {
 				state.status = 'loading';
-				return state;
+				state.data = state.data;
 			})
 			.addCase(getReposAsync.fulfilled, (state, action) => {
 				state.status = 'success';
@@ -43,7 +38,7 @@ export const reposSlice = createSlice({
 	},
 });
 
-export const { clearData } = reposSlice.actions;
+export const { clearReposData } = reposSlice.actions;
 export const selectReposData = (state: RootState) => state.repos.data;
 export const selectReposStatus = (state: RootState) => state.repos.status;
 
