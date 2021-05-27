@@ -1,6 +1,6 @@
 import React from 'react';
 import { StarFilled } from '@ant-design/icons';
-import { useAppSelector, useAppDispatch } from '../app/hooks';
+import { useAppSelector } from '../app/hooks';
 import { selectReposData } from '../slicer/reposSlice';
 import { NoContent } from './NoContent';
 import { Spin } from 'antd';

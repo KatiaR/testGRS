@@ -4,6 +4,7 @@ import { useAppDispatch } from '../app/hooks';
 import { clearData, getUsersAsync } from '../slicer/usersSlice';
 import { clearReposData } from '../slicer/reposSlice';
 
+/* eslint-disable react-hooks/exhaustive-deps */
 export function SearchForm() {
 	const dispatch = useAppDispatch();
 	const onFinish = ({ searchInput }: { searchInput: string }) => {
