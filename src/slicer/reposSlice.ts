@@ -29,7 +29,7 @@ export const reposSlice = createSlice({
 		builder
 			.addCase(getReposAsync.pending, (state) => {
 				state.status = 'loading';
-				state.data = state.data;
+				return state;
 			})
 			.addCase(getReposAsync.fulfilled, (state, action) => {
 				state.status = 'success';
