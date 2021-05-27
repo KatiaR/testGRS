@@ -1,0 +1,67 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+		'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
+}
+
+.wrapperContainer {
+	margin: 2rem;
+	padding: 2rem;
+}
+
+.wrapperContainer .ant-layout-content {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.starIconClass {
+	padding: 0.5rem;
+}
+
+.submitButton {
+	width: 100%;
+}
+
+.card {
+	margin: 1rem;
+	padding: 1rem;
+	background: rgb(222, 234, 245);
+}
+.cardContent {
+	display: flex;
+	margin: 1rem;
+}
+.mainInfoCard {
+	font-weight: bold;
+	font-size: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.ratingInfo {
+	display: flex;
+	align-items: center;
+}
+
+.cardPreview .ant-collapse-header {
+	background: rgb(228, 232, 236);
+}
+
+.ant-collapse-header {
+	margin: 1rem;
+}
+
+.ant-collapse-borderless > .ant-collapse-item,
+.ant-collapse > .ant-collapse-item {
+	border: none;
+}
