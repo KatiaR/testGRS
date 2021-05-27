@@ -31,15 +31,21 @@ code {
 	width: 100%;
 }
 
+.ant-form-item-control-input-content .ant-btn {
+	height: 3rem;
+}
+
 .card {
 	margin: 1rem;
 	padding: 1rem;
 	background: rgb(222, 234, 245);
 }
+
 .cardContent {
 	display: flex;
 	margin: 1rem;
 }
+
 .mainInfoCard {
 	font-weight: bold;
 	font-size: 1rem;
@@ -53,15 +59,21 @@ code {
 	align-items: center;
 }
 
-.cardPreview .ant-collapse-header {
+.cardPreview .ant-collapse-header,
+.ant-form-item-control-input-content .ant-input {
 	background: rgb(228, 232, 236);
+	height: 3rem;
 }
 
 .ant-collapse-header {
-	margin: 1rem;
+	margin: 1rem 0;
 }
 
 .ant-collapse-borderless > .ant-collapse-item,
 .ant-collapse > .ant-collapse-item {
 	border: none;
+}
+
+.App .ant-layout {
+	background: #fff;
 }

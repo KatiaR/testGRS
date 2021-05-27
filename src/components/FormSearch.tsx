@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
 import { useAppSelector, useAppDispatch } from '../app/hooks';
-import { clearData, getUsersAsync } from '../features/search/usersSlice';
+import { clearData, getUsersAsync } from '../slicer/usersSlice';
 
 export function SearchForm() {
 	const dispatch = useAppDispatch();
@@ -17,20 +17,19 @@ export function SearchForm() {
 			clearData();
 		};
 	}, []);
+
 	return (
 		<Form
 			initialValues={{ remember: true }}
 			onFinish={onFinish}
 			onFinishFailed={onFinishFailed}
+			className="searchForm"
 		>
 			<Form.Item
 				name="searchInput"
 				rules={[{ required: true, message: 'Please input username!' }]}
 			>
-				<Input
-					placeholder="Enter username"
-					className="boxElementHeight"
-				/>
+				<Input placeholder="Enter username" />
 			</Form.Item>
 			<Form.Item>
 				<Button

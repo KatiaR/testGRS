@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Layout } from 'antd';
 import { ContentBox } from './ContentBox';
 import { SearchForm } from './FormSearch';
 
-const { Footer, Sider, Content } = Layout;
+const { Content } = Layout;
 
 export function WrapperLayout() {
 	return (

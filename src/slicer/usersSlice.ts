@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { getUsers, User } from '../../api/users';
-import { RootState } from '../../app/store';
+import { getUsers, User } from '../api/users';
+import { RootState } from '../app/store';
 
 export interface IUserState {
 	data?: User[];

@@ -1,6 +1,6 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import usersReducer from '../features/search/usersSlice';
-import reposReducer from '../features/search/reposSlice';
+import usersReducer from '../slicer/usersSlice';
+import reposReducer from '../slicer/reposSlice';
 
 export const store = configureStore({
 	reducer: {
