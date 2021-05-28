@@ -1,6 +1,8 @@
 Test task
 Reacr Application witch integrates with github.com API and allows user to search for up to 5 users with a login/name similar
-to the entered in text input and then onclick, display repositories for selected GitHub user
+to the entered in text input and then onclick, display repositories for selected GitHub user.
+
+The task does not include tests and error handling.
 
 Technology stack
 
